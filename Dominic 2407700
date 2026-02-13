@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Personal Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="https://via.placeholder.com/80" alt="Profile Icon" class="icon" />
+      <h1>My Personal Website</h1>
+    </div>
+
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+
+      <div class="profile-container">
+        <img 
+          src="https://via.placeholder.com/200" 
+          alt="Profile Photo" 
+          class="profile-img"
+        />
+      </div>
+
+      <p>
+        Hi! I’m learning web development using HTML5 and CSS3.
+      </p>
+
+      <div class="about-box">
+        <p>
+          This is a block element inside a div to show block content styling.
+        </p>
+      </div>
+    </section>
+
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+
+      <p>Here are some of my hobbies:</p>
+
+      <ul>
+        <li>Coding</li>
+        <li>Gaming</li>
+        <li>Swimming</li>
+        <li>Watching movies</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>You can find me here:</p>
+
+      <a href="https://example.com" target="_blank">My Website</a><br />
+      <a href="https://instagram.com" target="_blank">Instagram</a><br />
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 My Personal Website</p>
+    <p>
+      Follow me:
+      <a href="#">Facebook</a> |
+      <a href="#">YouTube</a>
+    </p>
+  </footer>
+
+</body>
+</html>
