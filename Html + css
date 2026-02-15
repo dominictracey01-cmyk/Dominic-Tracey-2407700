@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Profile</title>
+
+    <style>
+        /* =========================
+           CSS VARIABLES
+        ========================== */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --main-font: Arial, sans-serif;
+        }
+
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
+        body {
+            margin: 0;
+            font-family: var(--main-font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 80px;
+            vertical-align: middle;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        /* PSEUDO-CLASS */
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Center and round profile image */
+        .profile-img {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="https://via.placeholder.com/80" alt="Icon">
+        <h1>John Doe</h1>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+
+        <p>
+            Hello! My name is John. I am learning web development and practicing HTML5 and CSS3.
+            I enjoy building websites and improving my coding skills.
+        </p>
+
+        <!-- Example of block content -->
+        <div>
+            <p>
+                This is an example of block-level content inside a div.
+                I am passionate about technology and creative design.
+            </p>
+        </div>
+    </section>
+
+    <!-- HOBBIES SECTION -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+
+        <!-- List -->
+        <ul>
+            <li>Web Development</li>
+            <li>Swimming</li>
+            <li>Gaming</li>
+            <li>Reading Tech Blogs</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact</h2>
+
+        <p>You can reach me on my social media platforms:</p>
+
+        <!-- Links -->
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 John Doe | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
