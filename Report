@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>AI Business Report</h1>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Chosen Idea</h2>
+    <p>Robotic Artificial intelligence Assistant. </p>
+
+    <h2>Application</h2>
+    <p>help people with their eveyday life and provide safety </p>
+
+    <h2>Ethical Issues</h2>
+    <p>ethical concern would be that people would assume that the robots will cause them harm, and the solution to that is to write a code that prevent the robot from causing harm or letting any harm to human life.</p>
+
+    <h2>Example App</h2>
+    <p><a href="https://example.com" target="_blank">App Website</a></p>
+</section>
+
+</body>
+</html>
