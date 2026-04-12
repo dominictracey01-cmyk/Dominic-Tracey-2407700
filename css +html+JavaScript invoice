@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Generator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    input, button {
+      margin: 5px 0;
+      padding: 8px;
+      width: 250px;
+      display: block;
+    }
+
+    #invoiceContainer {
+      margin-top: 20px;
+      border: 1px solid black;
+      padding: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    td, th {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<form id="checkoutForm">
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="text" id="address" placeholder="Shipping Address" required>
+  <input type="text" id="trn" placeholder="TRN" required>
+  <button type="submit">Generate Invoice</button>
+</form>
+
+<div id="invoiceContainer"></div>
+<p id="message"></p>
+
+<script>
+  let invoices = JSON.parse(localStorage.getItem("AllInvoices")) || [];
+
+  document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let trn = document.getElementById("trn").value;
+
+    // Sample items (you can replace with cart later)
+    let items = [
+      { name: "Item A", qty: 2, price: 100, discount: 10 },
+      { name: "Item B", qty: 1, price: 200, discount: 0 }
+    ];
+
+    let subtotal = 0;
+
+    items.forEach(item => {
+      let total = (item.price * item.qty) - item.discount;
+      subtotal += total;
+    });
+
+    let tax = subtotal * 0.15;
+    let totalCost = subtotal + tax;
+
+    let invoice = {
+      company: "My Company Ltd",
+      date: new Date().toLocaleDateString(),
+      invoiceNumber: "INV" + Date.now(),
+      name: name,
+      address: address,
+      trn: trn,
+      items: items,
+      subtotal: subtotal,
+      tax: tax,
+      totalCost: totalCost
+    };
+
+    // Save to array + localStorage
+    invoices.push(invoice);
+    localStorage.setItem("AllInvoices", JSON.stringify(invoices));
+
+    displayInvoice(invoice);
+
+    document.getElementById("message").innerText =
+      "Invoice has been sent to your email!";
+  });
+
+  function displayInvoice(inv) {
+    let html = `
+      <h2>Invoice</h2>
+      <p><strong>Company:</strong> ${inv.company}</p>
+      <p><strong>Date:</strong> ${inv.date}</p>
+      <p><strong>Invoice #:</strong> ${inv.invoiceNumber}</p>
+      <p><strong>Name:</strong> ${inv.name}</p>
+      <p><strong>Shipping:</strong> ${inv.address}</p>
+      <p><strong>TRN:</strong> ${inv.trn}</p>
+
+      <table>
+        <tr>
+          <th>Item</th><th>Qty</th><th>Price</th><th>Discount</th>
+        </tr>
+        ${inv.items.map(i => `
+          <tr>
+            <td>${i.name}</td>
+            <td>${i.qty}</td>
+            <td>${i.price}</td>
+            <td>${i.discount}</td>
+          </tr>
+        `).join("")}
+      </table>
+
+      <p><strong>Subtotal:</strong> ${inv.subtotal}</p>
+      <p><strong>Tax (15%):</strong> ${inv.tax}</p>
+      <p><strong>Total:</strong> ${inv.totalCost}</p>
+    `;
+
+    document.getElementById("invoiceContainer").innerHTML = html;
+  }
+</script>
+
+</body>
+</html>
